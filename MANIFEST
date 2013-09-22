@@ -1,0 +1,11 @@
+Changes
+LICENSE
+MANIFEST
+META.yml
+Makefile.PL
+README.pod
+bin/git-gerrit
+dist.ini
+lib/Git/Gerrit.pm
+t/author-critic.t
+t/release-pod-syntax.t

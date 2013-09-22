@@ -1,0 +1,34 @@
+---
+abstract: 'Git extension to implement a Gerrit workflow'
+author:
+  - 'Gustavo L. de M. Chaves <gnustavo@cpan.org>'
+build_requires: {}
+configure_requires:
+  ExtUtils::MakeMaker: 6.30
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Git-Gerrit
+requires:
+  Data::Dumper: 0
+  Exporter: 0
+  File::Slurp: 0
+  File::Spec: 0
+  File::Temp: 0
+  Gerrit::REST: 0
+  Getopt::Long: 0
+  LWP::Simple: 0
+  Pod::Usage: 0
+  URI: 0
+  URI::Escape: 0
+  perl: 5.010
+  strict: 0
+  utf8: 0
+  warnings: 0
+resources:
+  bugtracker: https://github.com/gnustavo/git-gerrit/issues
+  repository: git://github.com/gnustavo/git-gerrit.git
+version: 0.001
