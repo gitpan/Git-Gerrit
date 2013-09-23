@@ -31,4 +31,4 @@ requires:
 resources:
   bugtracker: https://github.com/gnustavo/git-gerrit/issues
   repository: git://github.com/gnustavo/git-gerrit.git
-version: 0.001
+version: 0.002
