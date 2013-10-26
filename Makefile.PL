@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Git extension to implement a Gerrit workflow",
+  "ABSTRACT" => "A container for functions for the git-gerrit program",
   "AUTHOR" => "Gustavo L. de M. Chaves <gnustavo\@cpan.org>",
   "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
@@ -24,21 +24,25 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Data::Dumper" => 0,
     "Exporter" => 0,
-    "File::Slurp" => 0,
     "File::Spec" => 0,
     "File::Temp" => 0,
-    "Gerrit::REST" => 0,
+    "Gerrit::REST" => "0.009",
     "Getopt::Long" => 0,
-    "LWP::Simple" => 0,
     "Pod::Usage" => 0,
+    "Text::Table" => 0,
     "URI" => 0,
     "URI::Escape" => 0,
+    "locale" => 0,
+    "open" => 0,
     "strict" => 0,
     "utf8" => 0,
     "warnings" => 0
   },
-  "TEST_REQUIRES" => {},
-  "VERSION" => "0.002",
+  "TEST_REQUIRES" => {
+    "Test::More" => 0,
+    "lib" => 0
+  },
+  "VERSION" => "0.018",
   "test" => {
     "TESTS" => "t/*.t"
   }

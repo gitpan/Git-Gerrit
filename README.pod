@@ -1,10 +1,7 @@
-=head1 NAME
-
-git-gerrit - Git extension to implement a Gerrit workflow
+README - The git-gerrit script is a Git extension to implement a
+Gerrit workflow.
 
 =head1 DESCRIPTION
-
-WARNING: THIS IS STILL BETA CODE.
 
 Git-gerrit is a Git extension to manage changes using L<Gerrit Code
 Review|http://code.google.com/p/gerrit/>.
@@ -16,52 +13,19 @@ web interface most of the time and improving your efficiency. The goal
 is to make Gerrit's review process feel like a natural extension of
 Git.
 
-=head1 INSTALLATION
+Git-gerrit was originally inspired by the
+L<git-review|https://github.com/openstack-infra/git-review> script,
+which is used by some very well-known projects, such as OpenStack,
+MediaWiki, and LibreOffice. It also draws from other scripts such as
+L<git-change|https://github.com/Nextdoor/git-change> and
+L<querrit|https://gitorious.org/querrit/querrit>. However, while those
+scripts are based on Gerrit's old SSH API, git-gerrit is based on
+Gerrit's new REST API, taking advantage of its richer functionality.
 
-Make sure you have at least Perl 5.10 installed. Check this with:
-
-    perl -v
-
-Then, you should install the Git::Gerrit distribution from
-L<CPAN|http://search.cpan.org/dist/Git-Gerrit/>. You can do it
-manually or via one of these commands:
-
-    cpanm Git::Gerrit
-
-    cpan Git::Gerrit
-
-Both commands should take care of non-core Perl dependencies for you.
-
-Git-gerrit's full documentation can be read by typing
-
-    perldoc git-gerrit
-
-=head1 ALTERNATIVES
-
-There are some alternatives to git-gerrit, other Git extensions to
-make it easier to interact with Gerrit. The three mentioned below are
-the most well known. All of them use Gerrit's mature and simple SSH
-API while git-gerrit's distinguishes from them in that it uses
-Gerrit's newer and more comprehensive REST API.
-
-=over
-
-=item * L<git-review|https://github.com/openstack-infra/git-review>
-
-Being the original inspiration for git-gerrit, git-review is a mature
-tool that's used by some very well known projects, such as OpenStack,
-MediaWiki, and LibreOffice.
-
-=item * L<git-change|https://github.com/Nextdoor/git-change>
-
-Simpler than git-review, git-change is better documented and has the
-best name of all. From it, git-gerrit took the change-branch concept.
-
-=item * L<querrit|https://gitorious.org/querrit/querrit>
-
-A very simple tool to query Gerrit and make it easier to push changes.
-
-=back
+For the complete documentation, installation, and configuration
+instructions, please, read the
+L<git-gerrit|http://search.cpan.org/dist/Git-Gerrit/bin/git-gerrit>
+script documentation.
 
 =head1 TODO
 
@@ -69,21 +33,21 @@ An incomplete list of things to do in random order:
 
 =over
 
-=item * Document, document, document, ...
-
 =item * Test, test, test, ...
 
 =item * checkout CHANGE.patchsetNumber
 
 Allow for the checkout of a specific patchset of a change.
 
-=item * implement 'cherrypick'
+=item * implement 'git gerrit diff'
 
-=item * implement 'diff'
+To show diffs between patchsets. A la git-review -m.
 
 =item * implement the '--dry-run' option
 
-=item * implement 'log'
+To avoid running non-query commands.
+
+=item * implement 'git gerrit log'
 
 =item * implement extensibility by plugins
 
@@ -94,21 +58,50 @@ L<this|https://npmjs.org/package/git-jira>.
 Another one would be to invite reviewers based on the history of the
 files/lines touched by the change.
 
-=item * implement a 'purge' command to get rid of merged/abandoned change branches
+=item * support named-queries via git-gerrit.query configuration.
 
-=item * implement a bash completion script
-
-=item * support named-queries via git-gerrit.query configuration. This
-idea comes from L<querrit|https://gitorious.org/querrit/querrit>
+This idea comes from L<querrit|https://gitorious.org/querrit/querrit>
 shortcuts.
 
 =item * implement 'git gerrit checkout topic'
+
+To checkout one or more changes associated with a Gerrit topic.
+
+=item * 'git gerrit review --verbose'
+
+This should work like 'git commit --verbose' so that the diff should
+be inserted in the temporary file created to invoke Git's editor. This
+way the user would be able to better study the change while he's
+composing a review message.
+
+=item * implement inline comments
+
+With 'git gerrit review --verbose' it should be possible to allow the
+user to insert comments below the diff lines. These comments would be
+recorded as draft comments associated with files or lines.
+
+This would be really cool.
+
+=item * implement 'git gerrit prune'
+
+To remove stale change-branches, a la git-repo.
+
+=item * show change comments in 'git gerrit show --verbose'
+
+=item * show current change-set id in 'git gerrit show'
+
+=item * reformat dates on 'git gerrit query'
+
+Perhaps, showing them as deltas since last change, a la what Gerrit
+does on its web interface.
+
+=item * Allow a list of changes as arguments for most commands
 
 =back
 
 =head1 COPYRIGHT
 
-Copyright (c) 2012 by CPqD (http://www.cpqd.com.br/)
+Copyright (c) 2013 by L<CPqD|http://www.cpqd.com.br/>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
