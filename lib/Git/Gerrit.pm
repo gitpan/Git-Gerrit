@@ -18,10 +18,9 @@ BEGIN {
 }
 use open ':std', $encoding;
 
-$Git::Gerrit::VERSION = 'unreleased';
 package Git::Gerrit;
 {
-  $Git::Gerrit::VERSION = '0.018';
+  $Git::Gerrit::VERSION = '0.019';
 }
 # ABSTRACT: A container for functions for the git-gerrit program
 
@@ -1196,7 +1195,7 @@ Git::Gerrit - A container for functions for the git-gerrit program
 
 =head1 VERSION
 
-version 0.018
+version 0.019
 
 =head1 SYNOPSIS
 

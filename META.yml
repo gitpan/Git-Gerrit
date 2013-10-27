@@ -38,6 +38,6 @@ requires:
   warnings: 0
 resources:
   bugtracker: https://github.com/gnustavo/git-gerrit/issues
-  homepage: http://search.cpan.org/dist/App-GitGerrit/
+  homepage: http://search.cpan.org/dist/Git-Gerrit/
   repository: git://github.com/gnustavo/git-gerrit.git
-version: 0.018
+version: 0.019
